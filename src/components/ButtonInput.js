@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, TouchableOpacity, StyleSheet } from "react-native";
-import { Colors } from "react-native/Libraries/NewAppScreen";
+
 
 export default function ButtonInput({ title, actionOnPress }) {
   return (
@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: "#0BBBC5",
     width: 120,
-    height: 50,
+    height: 40,
     borderRadius: 20,
     alignItems: "center",
     margin: "9%",

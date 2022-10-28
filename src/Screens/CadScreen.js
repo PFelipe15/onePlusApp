@@ -16,11 +16,12 @@ export default function CadScreen({ route }) {
         <Title title="OnePLUS"></Title>
 
         <Form>
-          <TextInputs placeholder="Digite seu Nome.." />
-          <TextInputs placeholder="Digite Seu email.." />
+          <TextInputs placeholder="Digite seu Nome.." nameIcon="account" />
+          <TextInputs placeholder="Digite Seu email.." nameIcon="email" />
           <TextInputs
             placeholder="Digite uma senha Segura.."
             secureTextEntry={true}
+            nameIcon="onepassword"
           />
           <ButtonView>
             <ButtonCadScreen title="Cadastrar" />

@@ -1,18 +1,35 @@
-import React from "react";
-import { TextInput, StyleSheet, Text } from "react-native";
-export default function TextInputs({ placeholder, secureTextEntry }) {
+import React, { useState } from "react";
+import { TextInput, StyleSheet, Text, View } from "react-native";
+import Icon from "react-native-vector-icons/MaterialCommunityIcons/";
+export default function TextInputs({
+  placeholder,
+  secureTextEntry,
+  nameIcon,
+  data,
+}) {
+  const [data, setdata] = useState();
+
   return (
-    <TextInput
-      placeholderTextColor="white"
-      style={styles.input}
-      placeholder={placeholder}
-      autoCapitalize="none"
-      secureTextEntry={secureTextEntry}
-    />
+    <View style={styles.container}>
+      <TextInput
+        placeholderTextColor="white"
+        style={styles.input}
+        placeholder={placeholder}
+        autoCapitalize="none"
+        secureTextEntry={secureTextEntry}
+        onChangeText={(text) => setdata(text)}
+      ></TextInput>
+      <Icon name={nameIcon} size={28} style={styles.icon} />
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    width: "100%",
+    flexDirection: "row",
+    alignItems: "center",
+  },
   input: {
     width: "100%",
     marginTop: 30,
@@ -21,7 +38,12 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     fontSize: 20,
     textAlign: "center",
-    fontWeight:'bold',
-   
+    fontWeight: "bold",
+  },
+  icon: {
+    position: "absolute",
+    top: 35,
+    left: 14,
+    color: "white",
   },
 });

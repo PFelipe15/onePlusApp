@@ -1,10 +1,14 @@
 import React from "react";
 import { View, StyleSheet, Text, KeyboardAvoidingView } from "react-native";
-import { ScrollView } from "react-native-web";
-import Title from "./Titles";
+
 
 export default function Form({ children }) {
-  return <View style={styles.form}>{children}</View>;
+  return (
+    <View style={styles.form}>
+      {children}
+      
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
