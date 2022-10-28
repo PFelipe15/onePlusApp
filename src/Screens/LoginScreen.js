@@ -1,14 +1,13 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { Text, View, Style, StyleSheet } from "react-native";
 import Background from "../components/Background";
 import Form from "../components/FormView";
 import Main from "../components/MainView";
 import Title from "../components/Titles";
 import TextInputs from "../components/TextInputs";
-
 import ButtonInput from "../components/ButtonInput";
 import ButtonView from "../components/ButtonView";
-export default function LoginScreen() {
+export default function LoginScreen({ navigation }) {
   return (
     <Background>
       <Main>
@@ -17,10 +16,19 @@ export default function LoginScreen() {
           <TextInputs placeholder="Email.." />
           <TextInputs placeholder="Senha.." secureTextEntry={true} />
           <ButtonView>
-          <ButtonInput title="Entrar" />
-          <ButtonInput title="Cadastrar" />
+            <ButtonInput
+              title="Entrar"
+              actionOnPress={() => {
+                navigation.navigate("Home", { name:"Usuario01"});
+              }}
+            />
+            <ButtonInput
+              title="Cadastrar"
+              actionOnPress={() => {
+                navigation.navigate("Cadastro");
+              }}
+            />
           </ButtonView>
-          
         </Form>
       </Main>
     </Background>

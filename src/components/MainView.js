@@ -7,11 +7,12 @@ export default function Main({ children }) {
 
 const styles = StyleSheet.create({
   main: {
-    flex: 1,
-    alignItems: "center",
-    width: "85%",
-
+    width: "100%",
+    height:'80%',
     marginTop: "30%",
     marginBottom: "10%",
+    alignItems: "center",
+    
+   
   },
 });
