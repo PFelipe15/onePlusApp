@@ -1,14 +1,20 @@
 import React from "react";
 import Background from "../components/Background";
+import Logout from "../components/CompStatic/Logout";
 import Main from "../components/MainView";
 import TitleSmall from "../components/TitleSmall";
-
-export default function HomeScreen({ route }) {
+import { useAuth } from "../hooks/auth";
+export default function HomeScreen({navigation}) {
+  const { logout } = useAuth();
   return (
     <Background>
-      <Main>
-        <TitleSmall title={"Seja Bem Vindo!"+route.params.name}></TitleSmall>
-      </Main>
+      <Logout
+        eventOnpres={() => {
+          navigation.navigate("Login");
+          logout();
+        }}
+      />
+      <TitleSmall title={"Seja Bem Vindo!"}></TitleSmall>
     </Background>
   );
 }

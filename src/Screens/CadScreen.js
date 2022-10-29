@@ -1,15 +1,14 @@
 import React from "react";
-import { View, StyleSheet, Text } from "react-native";
 import Background from "../components/Background";
 import ButtonCadScreen from "../components/ButtonCadScreen";
-import ButtonInput from "../components/ButtonInput";
 import ButtonView from "../components/ButtonView";
 import Form from "../components/FormView";
 import Main from "../components/MainView";
 import TextInputs from "../components/TextInputs";
 import Title from "../components/Titles";
-
-export default function CadScreen({ route }) {
+import { useAuth } from "../hooks/auth";
+export default function CadScreen({ navigation }) {
+  const { login } = useAuth();
   return (
     <Background>
       <Main>
@@ -24,7 +23,13 @@ export default function CadScreen({ route }) {
             nameIcon="onepassword"
           />
           <ButtonView>
-            <ButtonCadScreen title="Cadastrar" />
+            <ButtonCadScreen
+              title="Cadastrar"
+              actionOnPress={() => {
+                navigation.navigate("Home");
+                login();
+              }}
+            />
           </ButtonView>
         </Form>
       </Main>

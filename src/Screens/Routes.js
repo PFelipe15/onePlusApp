@@ -4,7 +4,6 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import LoginScreen from "./LoginScreen";
 import CadScreen from "./CadScreen";
 import HomeScreen from "./HomeScreen";
-
 const Stack = createNativeStackNavigator();
 export default function RoutesApp() {
   return (
@@ -37,7 +36,7 @@ export default function RoutesApp() {
           name="Home"
           component={HomeScreen}
           options={{
-            headerShown:false,
+            headerShown: false,
           }}
         />
       </Stack.Navigator>

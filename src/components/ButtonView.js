@@ -1,8 +1,9 @@
 import React from "react";
 import { View, StyleSheet, Text } from "react-native";
-import Title from "./Titles";
 
-export default function ButtonView({ children, typeflexDirecion }) {
+
+
+export default function ButtonView({ children}) {
   return <View style={styles.buttonView}>{children}</View>;
 }
 

@@ -7,7 +7,7 @@ export default function TextInputs({
   nameIcon,
   data,
 }) {
-  const [data, setdata] = useState();
+  const [auth, setAuth] = useState("");
 
   return (
     <View style={styles.container}>
@@ -17,7 +17,8 @@ export default function TextInputs({
         placeholder={placeholder}
         autoCapitalize="none"
         secureTextEntry={secureTextEntry}
-        onChangeText={(text) => setdata(text)}
+        value={auth}
+        onChangeText={(text) => setAuth(text)}
       ></TextInput>
       <Icon name={nameIcon} size={28} style={styles.icon} />
     </View>

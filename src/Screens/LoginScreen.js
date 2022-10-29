@@ -5,9 +5,10 @@ import Main from "../components/MainView";
 import Title from "../components/Titles";
 import TextInputs from "../components/TextInputs";
 import ButtonInput from "../components/ButtonInput";
+import { useAuth } from "../hooks/auth";
 import ButtonView from "../components/ButtonView";
 export default function LoginScreen({ navigation }) {
-  const [name, setname] = useState("");
+  const {  login } = useAuth();
   return (
     <Background>
       <Main>
@@ -24,7 +25,8 @@ export default function LoginScreen({ navigation }) {
             <ButtonInput
               title="Entrar"
               actionOnPress={() => {
-                navigation.navigate("Home", { name: data });
+                navigation.navigate("Home",)
+                login() ;
               }}
             />
             <ButtonInput
