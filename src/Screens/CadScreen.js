@@ -15,7 +15,7 @@ export default function CadScreen({ navigation }) {
         <Title title="OnePLUS"></Title>
 
         <Form>
-          <TextInputs placeholder="Digite seu Nome.." nameIcon="account" />
+          <TextInputs placeholder="Digite seu Nome.." nameIcon="account"/>
           <TextInputs placeholder="Digite Seu email.." nameIcon="email" />
           <TextInputs
             placeholder="Digite uma senha Segura.."
@@ -27,7 +27,7 @@ export default function CadScreen({ navigation }) {
               title="Cadastrar"
               actionOnPress={() => {
                 navigation.navigate("Home");
-                login();
+               
               }}
             />
           </ButtonView>

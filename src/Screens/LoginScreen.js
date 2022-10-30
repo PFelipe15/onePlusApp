@@ -8,25 +8,35 @@ import ButtonInput from "../components/ButtonInput";
 import { useAuth } from "../hooks/auth";
 import ButtonView from "../components/ButtonView";
 export default function LoginScreen({ navigation }) {
-  const {  login } = useAuth();
+  const { email,password, setEmail, setPassword, login } = useAuth();
+
   return (
     <Background>
       <Main>
         <Title title="ONEplus"></Title>
         <Form>
-          <TextInputs placeholder="Email.." nameIcon={"email"} />
+          <TextInputs
+            placeholder="Email.."
+            nameIcon={"email"}
+            eventOnchange={(text) => {
+              setEmail(text);
+            }}
+          />
           <TextInputs
             placeholder="Senha.."
             secureTextEntry={true}
             nameIcon={"onepassword"}
-            
+            eventOnchange={(text) => {
+              setPassword(text);
+            }}
           />
           <ButtonView>
             <ButtonInput
               title="Entrar"
               actionOnPress={() => {
-                navigation.navigate("Home",)
-                login() ;
+                navigation.navigate("Home")
+                
+                
               }}
             />
             <ButtonInput
