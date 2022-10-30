@@ -1,11 +1,12 @@
 import React from "react";
 import Background from "../components/Background";
+import ButtonInput from "../components/ButtonInput";
 import Logout from "../components/CompStatic/Logout";
-import Main from "../components/MainView";
 import TitleSmall from "../components/TitleSmall";
 import { useAuth } from "../hooks/auth";
-export default function HomeScreen({navigation}) {
-  const { logout } = useAuth();
+import TextInputs from "../components/TextInputs";
+export default function HomeScreen({ navigation }) {
+  const {logout, email, password} = useAuth();
   return (
     <Background>
       <Logout
@@ -14,7 +15,10 @@ export default function HomeScreen({navigation}) {
           logout();
         }}
       />
+   
       <TitleSmall title={"Seja Bem Vindo!"}></TitleSmall>
+
+      
     </Background>
   );
 }
