@@ -6,7 +6,7 @@ import TitleSmall from "../components/TitleSmall";
 import { useAuth } from "../hooks/auth";
 import TextInputs from "../components/TextInputs";
 export default function HomeScreen({ navigation }) {
-  const {logout, email, password} = useAuth();
+  const { logout, email, password, name } = useAuth();
   return (
     <Background>
       <Logout
@@ -15,10 +15,8 @@ export default function HomeScreen({ navigation }) {
           logout();
         }}
       />
-   
-      <TitleSmall title={"Seja Bem Vindo!"}></TitleSmall>
 
-      
+      <TitleSmall title={"Seja Bem Vindo!" + name}></TitleSmall>
     </Background>
   );
 }

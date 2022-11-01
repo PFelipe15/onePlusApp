@@ -8,8 +8,9 @@ import ButtonInput from "../components/ButtonInput";
 import { useAuth } from "../hooks/auth";
 import ButtonView from "../components/ButtonView";
 export default function LoginScreen({ navigation }) {
-  const { email,password, setEmail, setPassword, login } = useAuth();
-
+  const { login } = useAuth();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   return (
     <Background>
       <Main>
@@ -33,10 +34,9 @@ export default function LoginScreen({ navigation }) {
           <ButtonView>
             <ButtonInput
               title="Entrar"
-              actionOnPress={() => {
-                navigation.navigate("Home")
-                
-                
+              actionOnPress={async () => {
+                await login(email, password);
+                navigation.navigate("Home");
               }}
             />
             <ButtonInput
